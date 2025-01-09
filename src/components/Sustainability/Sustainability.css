@@ -1,0 +1,52 @@
+.sustainability {
+    padding: 50px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.sustainability h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.sustainability-intro {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.sustainability-highlights {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.highlight {
+    width: 30%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.highlight:hover {
+    transform: scale(1.05);
+}
+
+.highlight h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.highlight p {
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .highlight {
+        width: 90%;
+    }
+}

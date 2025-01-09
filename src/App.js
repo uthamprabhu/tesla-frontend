@@ -14,8 +14,8 @@ const App = () => {
       <HeroSection />
       <Features />
       <Performance />
-      {/* <Sustainability /> */}
-      {/* <Footer /> */}
+      <Sustainability />
+      <Footer />
     </div>
   );
 };
