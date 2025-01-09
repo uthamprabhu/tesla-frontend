@@ -5,7 +5,7 @@
     height: 100vh;
     color: white;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
 }
@@ -52,5 +52,10 @@
 @media (max-width: 768px) {
     .hero {
         background-image: url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-APR-Promo-Hero-Mobile-v3.png');
+        height: 87vh;
+    }
+
+    .hero-content {
+        margin-top: 110px;
     }
 }

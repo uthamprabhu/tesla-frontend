@@ -13,7 +13,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="footer-bottom">
-                <p>&copy; 2025 Tesla World. All Rights Reserved.</p>
+                <p>&copy; 2025 Tesla. All Rights Reserved.</p>
             </div>
         </footer>
     );

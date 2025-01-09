@@ -3,13 +3,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
+    padding: 15px 10%;
     background: linear-gradient(90deg, #000, #222);
     color: white;
     position: sticky;
     top: 0;
     z-index: 10;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.header.hidden {
+    transform: translateY(-100%);
+}
+
+.header.visible {
+    transform: translateY(0);
 }
 
 .logo {
@@ -68,7 +77,7 @@
 @media (max-width: 768px) {
     .navbar {
         position: absolute;
-        top: 60px;
+        top: 65px;
         right: 0;
         background: #111;
         flex-direction: column;

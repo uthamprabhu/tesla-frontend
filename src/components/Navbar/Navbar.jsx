@@ -1,16 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Navbar.css';
 import teslaLogo from '../../assets/tesla-logo.svg';
 
 const Navbar = () => {
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollPos, setLastScrollPos] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
+    const handleScroll = useCallback(() => {
+        const currentScrollPos = window.pageYOffset;
+        if (currentScrollPos > lastScrollPos && currentScrollPos > 50) {
+            setIsVisible(false);
+        } else {
+            setIsVisible(true);
+        }
+        setLastScrollPos(currentScrollPos);
+    }, [lastScrollPos]);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [handleScroll]);
+
     return (
-        <header className="header">
+        <header className={`header ${isVisible ? 'visible' : 'hidden'}`}>
             <div className="logo">
                 <img src={teslaLogo} alt="Tesla Logo" className="tesla-logo" />
             </div>
