@@ -1,0 +1,47 @@
+.performance {
+    padding: 50px;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.performance h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.performance-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.performance-card {
+    width: 30%;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.performance-card:hover {
+    transform: translateY(-10px);
+}
+
+.performance-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.performance-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .performance-card {
+        width: 90%;
+    }
+}
