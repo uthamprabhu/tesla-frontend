@@ -24,7 +24,7 @@ Check out the live application here: [Tesla Clone on Netlify](https://precious-l
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/tesla-clone.git
+   git clone https://github.com/uthamprabhu/tesla-frontend.git
    ```
 
 2. **Navigate to the project directory:**
