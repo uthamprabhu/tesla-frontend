@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './ProductList.css';
 import teslaLogo from '../../assets/tesla-logo-black.svg'
 
 const ProductList = () => {
+  const navigate = useNavigate()
   const [cars, setCars] = useState([]);
   const [filteredCars, setFilteredCars] = useState([]);
   const [hasMore, setHasMore] = useState(true);
@@ -17,6 +18,10 @@ const ProductList = () => {
   });
 
   const defaultImage = 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT356,$PR01,$W38A,$IPB2&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&';
+
+  const homePageNav = () => {
+    navigate('/')
+  }
 
   useEffect(() => {
     axios
@@ -67,7 +72,7 @@ const ProductList = () => {
   return (
     <div className="product-list-container">
       <header className="product-list-header">
-        <img src={teslaLogo} alt="Tesla Logo" className="tesla-logo" />
+        <img onClick={homePageNav} src={teslaLogo} alt="Tesla Logo" className="tesla-logo" />
         <h2 className="product-list-title">Explore Our Cars</h2>
         <Link to="/" className="home-button">
           Home

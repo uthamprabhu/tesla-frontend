@@ -4,12 +4,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 10%;
-    background: linear-gradient(90deg, #000, #222);
+    background: #000000e8;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     color: white;
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, background-color 0.3s;
 }
 

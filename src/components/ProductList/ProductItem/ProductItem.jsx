@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './ProductItem.css';
 import teslaLogo from '../../../assets/tesla-logo-black.svg'
 
 const ProductItem = () => {
   const { id } = useParams();
+  const navigate = useNavigate()
   const [car, setCar] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [customizations, setCustomizations] = useState({
@@ -16,6 +17,14 @@ const ProductItem = () => {
   const [loading, setLoading] = useState(true); // State to track loading status
 
   // const defaultImage = 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT356,$PR01,$W38A,$IPB2&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&';
+
+  const homePageNav = () => {
+    navigate('/')
+  }
+
+  const buildAndPriceNav = () => {
+    navigate('/product/buildAndPrice')
+  }
 
   const additionalImages = [
     `https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT356,${customizations.color},$${customizations.tyre},$${customizations.interior}&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&`,
@@ -61,7 +70,7 @@ const ProductItem = () => {
       ) : car ? (
         <div className="product-detail">
           <header className="product-list-header">
-            <img src={teslaLogo} alt="Tesla Logo" className="tesla-logo" />
+            <img onClick={homePageNav} src={teslaLogo} alt="Tesla Logo" className="tesla-logo" />
             <h2 className="product-list-title">{car.model}</h2>
             <Link to="/products" className="home-button">
               Back
@@ -181,7 +190,7 @@ const ProductItem = () => {
           </div>
 
           <div className="call-to-action-buttons">
-            <button className="cta-button build-price">Build & Price</button>
+            <button onClick={buildAndPriceNav} className="cta-button build-price">Build & Price</button>
             <button className="cta-button customer-care">Customer Care</button>
           </div>
 

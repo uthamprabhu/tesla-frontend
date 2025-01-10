@@ -98,6 +98,10 @@
   color: #7f8c8d;
 }
 
+.end-message{
+  text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .filters-container {

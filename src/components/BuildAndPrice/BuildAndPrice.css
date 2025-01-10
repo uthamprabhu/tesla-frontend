@@ -1,0 +1,164 @@
+
+
+/* Build & Price Page */
+.build-and-price-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.build-and-price-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.build-and-price-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #222;
+}
+
+.build-and-price-header p {
+    font-size: 18px;
+    color: #777;
+}
+
+/* Customization Sections */
+.customizations-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.customizations-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.customizations-section h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.options button {
+    padding: 12px 20px;
+    background-color: #eee;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1 1 calc(33.333% - 10px);
+    /* Ensure buttons take up equal space */
+}
+
+.options button.active {
+    background-color: #3b8bfb;
+    border-color: #3b8bfb;
+    color: #fff;
+}
+
+.options button:hover {
+    background-color: #ddd;
+}
+
+.total-price {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons Styles */
+.action-buttons {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.action-buttons .btn {
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-buttons .build-price {
+    background-color: #3b8bfb;
+    color: #fff;
+}
+
+.action-buttons .contact-sales {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+.action-buttons .proceed-payment {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.action-buttons .btn:hover {
+    opacity: 0.8;
+}
+
+.action-buttons .build-price:hover {
+    background-color: #2a75d4;
+}
+
+.action-buttons .contact-sales:hover {
+    background-color: #e65c00;
+}
+
+.action-buttons .proceed-payment:hover {
+    background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .customization-options {
+        grid-template-columns: 1fr;
+        /* Stack options on small screens */
+    }
+
+    .options button {
+        flex: 1 1 100%;
+    }
+
+    .build-and-price-header h1 {
+        font-size: 28px;
+    }
+
+    .build-and-price-header p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-buttons .btn {
+        width: 100%;
+    }
+}
