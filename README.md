@@ -54,20 +54,10 @@ Check out the live application here: [Tesla Clone on Netlify](https://precious-l
 
 2. **Responsive Design**: Optimized for different screen sizes, ensuring a seamless experience across devices.
 
-## 🖼️ Screenshots
-
-| Desktop View                                   | Mobile View                                   |
-|-----------------------------------------------|---------------------------------------------|
-| ![Desktop Screenshot](./screenshots/desktop.png) | ![Mobile Screenshot](./screenshots/mobile.png) |
-
 ## 🤝 Contribution
 
 Contributions are welcome! Feel free to fork the repository and submit a pull request.
 
-## 📜 License
-
-This project is licensed under the MIT License.
-
 ---
 
-Developed with ❤️ by [Your Name](https://github.com/your-username).
+Developed with ❤️ by [Utham N S Prabhu](https://github.com/uthamprabhu).
