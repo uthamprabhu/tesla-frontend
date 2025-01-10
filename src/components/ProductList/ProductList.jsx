@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './ProductList.css';
+import teslaLogo from '../../assets/tesla-logo-black.svg'
 
 const ProductList = () => {
   const [cars, setCars] = useState([]);
@@ -10,7 +11,10 @@ const ProductList = () => {
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
-  const [filters, setFilters] = useState({ make: '', year: '' }); // Example filters: make, year
+  const [filters, setFilters] = useState({
+    priceRange: '',
+    seatingCapacity: '',
+  });
 
   const defaultImage = 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT356,$PR01,$W38A,$IPB2&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&';
 
@@ -34,10 +38,13 @@ const ProductList = () => {
 
   useEffect(() => {
     const filtered = cars.filter((car) => {
+      const priceBase = car.price?.Base || 0;
+      const [minPrice, maxPrice] = filters.priceRange.split('-').map(Number);
+
       return (
-        (car.model?.toLowerCase().includes(searchQuery.toLowerCase()) || car.description?.toLowerCase().includes(searchQuery.toLowerCase())) &&
-        (filters.make ? car.make?.toLowerCase() === filters.make.toLowerCase() : true) &&
-        (filters.year ? car.year?.toString() === filters.year : true)
+        car.model?.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        (filters.priceRange ? priceBase >= minPrice && priceBase <= maxPrice : true) &&
+        (filters.seatingCapacity ? car.others?.seatingCapacity === filters.seatingCapacity : true)
       );
     });
     setFilteredCars(filtered);
@@ -60,6 +67,7 @@ const ProductList = () => {
   return (
     <div className="product-list-container">
       <header className="product-list-header">
+        <img src={teslaLogo} alt="Tesla Logo" className="tesla-logo" />
         <h2 className="product-list-title">Explore Our Cars</h2>
         <Link to="/" className="home-button">
           Home
@@ -70,22 +78,21 @@ const ProductList = () => {
       <div className="filters-container">
         <input
           type="text"
-          placeholder="Search by model or description..."
+          placeholder="Search by model..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="search-bar"
         />
-        <select name="make" value={filters.make} onChange={handleFilterChange} className="filter-dropdown">
-          <option value="">All Makes</option>
-          <option value="Tesla">Tesla</option>
-          <option value="Ford">Ford</option>
-          <option value="Toyota">Toyota</option>
+        <select name="priceRange" value={filters.priceRange} onChange={handleFilterChange} className="filter-dropdown">
+          <option value="">All Prices</option>
+          <option value="0-50000">Up to $50,000</option>
+          <option value="50001-100000">$50,001 - $100,000</option>
+          <option value="100001-150000">$100,001 - $150,000</option>
         </select>
-        <select name="year" value={filters.year} onChange={handleFilterChange} className="filter-dropdown">
-          <option value="">All Years</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
+        <select name="seatingCapacity" value={filters.seatingCapacity} onChange={handleFilterChange} className="filter-dropdown">
+          <option value="">All Seating Capacities</option>
+          <option value="5 Adults">5 Adults</option>
+          <option value="7 Adults">7 Adults</option>
         </select>
       </div>
 
