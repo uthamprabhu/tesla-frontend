@@ -14,6 +14,8 @@ This project is a **React Frontend Tesla Clone Application**, designed to replic
 
 Check out the live application here: [Tesla Clone on Netlify](https://unsp-tesla.netlify.app/)
 
+Heroku hosted backend link: [Tesla backend](https://tesla-clone-app-e1ebd2301b9b.herokuapp.com/)
+
 ## 🛠️ Technologies Used
 
 - **Frontend**: React.js, JavaScript, HTML5, CSS3
