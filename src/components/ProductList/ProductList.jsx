@@ -25,7 +25,7 @@ const ProductList = () => {
 
   useEffect(() => {
     axios
-      .get(`/cars?page=${page}`)
+      .get(`https://tesla-clone-app-e1ebd2301b9b.herokuapp.com/cars?page=${page}`)
       .then((response) => {
         setCars((prevCars) => {
           const newCars = response.data.filter((car) => !prevCars.some((prevCar) => prevCar._id === car._id));

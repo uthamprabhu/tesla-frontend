@@ -35,7 +35,7 @@ const ProductItem = () => {
   ];
 
   useEffect(() => {
-    axios.get(`/cars/${id}`)
+    axios.get(`https://tesla-clone-app-e1ebd2301b9b.herokuapp.com/cars/${id}`)
       .then((response) => {
         setCar(response.data);
         setLoading(false); // Set loading to false after data is fetched
