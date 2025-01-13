@@ -12,7 +12,7 @@ This project is a **React Frontend Tesla Clone Application**, designed to replic
 
 ## 🌐 Live Demo
 
-Check out the live application here: [Tesla Clone on Netlify](https://precious-lollipop-d7a3e0.netlify.app/)
+Check out the live application here: [Tesla Clone on Netlify](https://unsp-tesla.netlify.app/)
 
 ## 🛠️ Technologies Used
 
